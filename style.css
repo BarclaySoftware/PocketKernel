@@ -39,8 +39,20 @@
 }
 
 @font-face {
-    font-family: 'system ui';
+    font-family: 'sieoge';
     src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/sieoge.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'system ui';
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/PresqueVuSans.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'system ui bold';
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/PresqueVuSans-Bold.ttf);
     font-weight: 400;
 }
 
@@ -175,6 +187,7 @@ a:visited {
 }
 
 .modal-header {
+    font-family: var(--system-font-bold);
     background-color: var(--system-app-titlebar);
     color: var(--system-app-titlebar-text-color);
     padding: 10px;
