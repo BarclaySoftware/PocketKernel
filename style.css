@@ -15,7 +15,7 @@
 
     /* Selection colors. */
     --system-selection-background-color: #0078d4;
-    --system-selection-text-color: #F4F6FB;
+    --system-selection-text-color: #ffffff;
 
     /* Appbar colors. */
     --system-appbar-background-color: #000308;
@@ -46,13 +46,13 @@
 
 @font-face {
     font-family: 'system ui';
-    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/PresqueVuSans.ttf);
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/WillkommenUI.ttf);
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'system ui bold';
-    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/PresqueVuSans-Bold.ttf);
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/WillkommenUI-Bold.ttf);
     font-weight: 400;
 }
 
@@ -192,7 +192,7 @@ a:visited {
     color: var(--system-app-titlebar-text-color);
     padding: 10px;
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
