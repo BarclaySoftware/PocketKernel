@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketKernel</title>
+    <link rel="shortcut icon" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="desktop">
+    <div class="app" onclick="openApp('Search', 'https://caesiumapps.pages.dev/search/', true)">
+        <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/search.png" alt="Search">
+        <p>Search</p>
+    </div>
+
+    <div class="app" onclick="openApp('Browser', 'https://caesiumapps.pages.dev/browser/', true)">
+        <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/browser.png" alt="Browser">
+        <p>Browser</p>
+    </div>
+
+    <div class="app" onclick="openApp('Clock', 'https://caesiumapps.pages.dev/clock/', true)">
+        <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/clock.png" alt="Clock">
+        <p>Clock</p>
+    </div>
+
+    <div class="app" onclick="openApp('Canvas', 'https://caesiumapps.pages.dev/canvas/', true)">
+        <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/canvas.png" alt="Canvas">
+        <p>Canvas</p>
+    </div>
+
+    <div class="app" onclick="openApp('Notes', 'https://caesiumapps.pages.dev/notes/', true)">
+        <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/notes.png" alt="Notes">
+        <p>Notes</p>
+    </div>
+
+    <div class="app" onclick="openApp('Terminal', 'https://caesiumapps.pages.dev/terminal/', true)">
+        <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/terminal.png" alt="Terminal">
+        <p>Terminal</p>
+    </div>
+    
+    <div class="app" onclick="openApp('Calculator', 'https://caesiumapps.pages.dev/calculator/', true)">
+        <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/calculator.png" alt="Calculator">
+        <p>Calculator</p>
+    </div>
+
+    <div class="app" onclick="openApp('Welcome', '\n This is App 1 content.')">
+        <img src="https://delivercdn.pages.dev/WebKernel/images/appicons/welcome.png" alt="Welcome">
+        <p>Welcome</p>
+    </div>
+
+    <div class="app" onclick="openApp('QuickSend', 'https://caesiumapps.pages.dev/quicksend/', true)">
+        <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/quicksend.png" alt="QuickSend">
+        <p>QuickSend</p>
+    </div>
+
+    <div class="app" onclick="openApp('Media', 'https://caesiumapps.pages.dev/media/', true)">
+        <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/media.png" alt="Media">
+        <p>Media</p>
+    </div>
+    
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span id="app-title"></span>
+            <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+        <div class="modal-body" id="app-content">
+            <!-- App content will be injected here -->
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

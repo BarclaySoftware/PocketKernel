@@ -1,0 +1,213 @@
+:root {
+    /* The fonts in your web desktop's user interface. */
+    --system-font-regular: 'system ui';
+    --system-font-bold: 'system ui bold';
+
+    /* Colors used in apps. */
+    --system-app-titlebar: #0078d4;
+    --system-app-titlebar-text-color: #ffffff;
+    --system-app-background: #ffffff;
+    --system-app-text-color: #05070B;
+    --system-app-border-color: rgba(0,0,0,0);
+
+    /* Background color. */
+    --system-background-color: #0078d4;
+
+    /* Selection colors. */
+    --system-selection-background-color: #0078d4;
+    --system-selection-text-color: #F4F6FB;
+
+    /* Appbar colors. */
+    --system-appbar-background-color: #000308;
+    --system-appbar-opened: #0078d4;
+    --system-appbar-border: #000308;
+
+    /* Link colors */
+    --system-link-normal: #0078d4;
+    --system-link-hover: #0063b1;
+    --system-link-clicked: #0063b1;
+    --system-link-visited: #881798;
+
+
+    /* Scrollbar colors. */
+    --system-scroll-background: #f1f1f1;
+    --system-scroll-track-background: #f1f1f1;
+    --system-scroll-thumb-background: #c1c1c1;
+    --system-scroll-thumb-hover-background: #a8a8a8;
+    --system-scroll-thumb-active-background: #787878;
+
+}
+
+@font-face {
+    font-family: 'system ui';
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/sieoge.ttf);
+    font-weight: 400;
+}
+
+body, html {
+    font-family: var(--system-font-regular);
+    background-color: var(--system-app-background);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.desktop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--system-background-color);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    gap: 0px;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.app {
+    width: 70px;
+    height: 70px;
+    margin: 10px 10px;
+    background-color: var(--system-app-background);
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.app img {
+    width: 40px;
+    height: 40px;
+}
+
+.app p {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+}
+
+a {
+    color: var(--system-link-normal)
+}
+
+a:hover {
+    color: var(--system-link-hover)
+}
+
+a:active {
+    color: var(--system-link-clicked)
+}
+
+a:visited {
+    color: var(--system-link-visited)
+}
+
+/* Controls selected elements, like text. */
+::selection {
+    background-color: var(--system-selection-background-color);
+    color: var(--system-selection-text-color);
+}
+
+::-moz-selection {
+    background-color: var(--system-selection-background-color);
+    color: var(--system-selection-text-color);
+}
+
+::-webkit-scrollbar {
+    width: 18px;
+    height: 18px;
+    background: var(--system-scroll-background);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--system-scroll-track-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--system-scroll-thumb-background);
+    border-radius: 0px;
+    border: 3px solid var(--system-scroll-background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--system-scroll-thumb-hover-background);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: var(--system-scroll-thumb-active-background);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--system-app-background);
+    padding: 0;
+    border-radius: 00px;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    background-color: var(--system-app-titlebar);
+    color: var(--system-app-titlebar-text-color);
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.modal-header .close {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-body {
+    flex: 1;
+    padding: 0;
+    overflow: hidden;
+}
+
+.modal iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.appIcon {
+    width: 40px;
+    height: 40px;
+}
