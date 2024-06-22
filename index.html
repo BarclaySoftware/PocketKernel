@@ -29,6 +29,12 @@
     <title>PocketKernel</title>
 </head>
 <body>
+
+    <!-- Time and Battery Status -->
+    <div id="status-box" class="status-box">
+        <span id="time"></span> | <span id="battery"></span>
+    </div>
+    
     <!-- Where all of your web desktop's apps are. -->
     <div class="desktop">
         <!-- A sample embedded app. -->
@@ -38,41 +44,41 @@
         The third text is a true statement. If true, the text/URL will be used as the
         source for an iFrame. If false, or blank, the text will be renered as normal
         text. -->
-        <div class="app" onclick="openApp('Search', 'https://caesiumapps.pages.dev/search/', true)">
+        <div class="app" onclick="openApp('Barclay Search', 'https://caesiumapps.pages.dev/search/', true)">
             <!-- The icon of the app that will show on the home page. -->
             <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/search.png" alt="Search">
             <!-- The name of the app. -->
             <p>Search</p>
         </div>
 
-        <div class="app" onclick="openApp('Browser', 'https://caesiumapps.pages.dev/browser/', true)">
+        <div class="app" onclick="openApp('MiniBrowser', 'https://caesiumapps.pages.dev/browser/', true)">
             <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/browser.png" alt="Browser">
             <p>Browser</p>
         </div>
 
-        <div class="app" onclick="openApp('Clock', 'https://caesiumapps.pages.dev/clock/', true)">
+        <div class="app" onclick="openApp('DigiClock', 'https://caesiumapps.pages.dev/clock/', true)">
             <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/clock.png" alt="Clock">
             <p>Clock</p>
         </div>
 
-        <div class="app" onclick="openApp('Canvas', 'https://caesiumapps.pages.dev/canvas/', true)">
+        <div class="app" onclick="openApp('MyCanvas', 'https://caesiumapps.pages.dev/canvas/', true)">
             <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/canvas.png" alt="Canvas">
             <p>Canvas</p>
         </div>
 
-        <div class="app" onclick="openApp('Notes', 'https://caesiumapps.pages.dev/notes/', true)">
+        <div class="app" onclick="openApp('Dotlin Notes', 'https://caesiumapps.pages.dev/notes/', true)">
             <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/notes.png" alt="Notes">
             <p>Notes</p>
         </div>
 
-        <div class="app" onclick="openApp('Terminal', 'https://caesiumapps.pages.dev/terminal/', true)">
+        <div class="app" onclick="openApp('AS Embedded Terminal', 'https://caesiumapps.pages.dev/terminal/', true)">
             <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/terminal.png" alt="Terminal">
             <p>Terminal</p>
         </div>
 
-        <div class="app" onclick="openApp('Calculator', 'https://caesiumapps.pages.dev/calculator/', true)">
+        <div class="app" onclick="openApp('Matherator', 'https://caesiumapps.pages.dev/calculator/', true)">
             <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/calculator.png" alt="Calculator">
-            <p>Calculator</p>
+            <p>Matherator</p>
         </div>
 
         <!-- A basic text-based app. -->
@@ -91,7 +97,7 @@
             <p>QuickSend</p>
         </div>
 
-        <div class="app" onclick="openApp('Media', 'https://caesiumapps.pages.dev/media/', true)">
+        <div class="app" onclick="openApp('Media Player', 'https://caesiumapps.pages.dev/media/', true)">
             <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/media.png" alt="Media">
             <p>Media</p>
         </div>

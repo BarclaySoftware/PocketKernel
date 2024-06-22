@@ -31,3 +31,26 @@ window.onclick = function(event) {
 document.addEventListener('contextmenu', function (event) {
     event.preventDefault();
 });
+
+function updateTime() {
+    const timeElement = document.getElementById('time');
+    const now = new Date();
+    timeElement.textContent = now.toLocaleTimeString();
+}
+
+async function updateBattery() {
+    const batteryElement = document.getElementById('battery');
+    const battery = await navigator.getBattery();
+    batteryElement.textContent = `${Math.round(battery.level * 100)}%`;
+
+    battery.addEventListener('levelchange', () => {
+        batteryElement.textContent = `${Math.round(battery.level * 100)}%`;
+    });
+}
+
+// Initial load
+updateTime();
+updateBattery();
+
+// Update time every second
+setInterval(updateTime, 1000);
