@@ -39,20 +39,14 @@
 }
 
 @font-face {
-    font-family: 'sieoge';
-    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/sieoge.ttf);
-    font-weight: 400;
-}
-
-@font-face {
     font-family: 'system ui';
-    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/HarlechUI.ttf);
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/evermore/evermore.ttf);
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'system ui bold';
-    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/HarlechUI-Bold.ttf);
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/evermore/evermoreb.ttf);
     font-weight: 400;
 }
 
