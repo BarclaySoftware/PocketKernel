@@ -34,6 +34,6 @@ document.addEventListener('contextmenu', function (event) {
 });
 
 // Opens the Welcome app when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-    openApp('Startup', 'https://caesiumapps.pages.dev/sys/', true);
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     openApp('Startup', 'https://caesiumapps.pages.dev/sys/', true);
+// });
