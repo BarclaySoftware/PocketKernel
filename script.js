@@ -1,3 +1,4 @@
+// Copyright (c) 2024 Aurorasoft. PocketKernel is a trademark of Aurorasoft.
 // Function to open the app
 function openApp(appName, content, isIframe = false) {
     document.getElementById('app-title').innerText = appName;
