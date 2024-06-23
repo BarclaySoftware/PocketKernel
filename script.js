@@ -12,19 +12,19 @@ function openApp(appName, content, isIframe = false) {
         appContent.innerText = content;
     }
     
-    document.getElementById('modal').style.display = 'flex';
+    document.getElementById('frame').style.display = 'flex';
 }
 
 // Closes the app when the user presses the close icon
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
+function closeframe() {
+    document.getElementById('frame').style.display = 'none';
 }
 
-// Closes the app when clicking outside of the modal
+// Closes the app when clicking outside of the frame
 window.onclick = function(event) {
-    const modal = document.getElementById('modal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
+    const frame = document.getElementById('frame');
+    if (event.target == frame) {
+        frame.style.display = 'none';
     }
 }
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,12 +32,10 @@
     <!-- Where all of your web desktop's apps are. -->
     <div class="desktop">
         <!-- A sample embedded app. -->
-        <!-- In the openApp() area, the first text in quotes is the name of the app.
-        Keep it the same for this section and the paragraph tags below. The next text
-        is the app URL (if it is a text app, then put the contents of the app there.)
-        The third text is a true statement. If true, the text/URL will be used as the
-        source for an iFrame. If false, or blank, the text will be renered as normal
-        text. -->
+        <!-- In the openApp() area, the first text in quotes is the name of the app. Keep it the same for this section
+        and the paragraph tags below. The next text is the app URL (if it is a text app, then put the contents of the
+        app there.) The third text is a true statement. If true, the text/URL will be used as the source for an iFrame.
+        If false, or blank, the text will be renered as normal text. -->
         <div class="app" onclick="openApp('Search', 'https://caesiumapps.pages.dev/search/', true)">
             <!-- The icon of the app that will show on the home page. -->
             <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/search.png" alt="Search">
@@ -63,7 +60,7 @@
 
         <div class="app" onclick="openApp('Notes', 'https://caesiumapps.pages.dev/notes/', true)">
             <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/notes.png" alt="Notes">
-            <p>MyNotes</p>
+            <p>Notes</p>
         </div>
 
         <div class="app" onclick="openApp('Terminal', 'https://caesiumapps.pages.dev/terminal/', true)">
@@ -71,9 +68,9 @@
             <p>Terminal</p>
         </div>
 
-        <div class="app" onclick="openApp('Calculator', 'https://caesiumapps.pages.dev/calculator/', true)">
+        <div class="app" onclick="openApp('Solver', 'https://caesiumapps.pages.dev/calculator/', true)">
             <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/calculator.png" alt="Calculator">
-            <p>Calculator</p>
+            <p>Solver</p>
         </div>
 
         <!-- A basic text-based app. -->
@@ -87,9 +84,9 @@
             <p>Startup</p>
         </div>
 
-        <div class="app" onclick="openApp('RSS Feeder', 'https://caesiumapps.pages.dev/rss/', true)">
+        <div class="app" onclick="openApp('RSS', 'https://caesiumapps.pages.dev/rss/', true)">
             <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/rss.png" alt="Media">
-            <p>RSS Feeder</p>
+            <p>RSS</p>
         </div>
 
         <div class="app" onclick="openApp('Updates', '\n Version 1.0: Initial release. \n Version 1.1: Changed UI to fit Aurorasoft design standards \n Version 1.2: Changed UI to use new display font to make the feel more welcoming. \n Version 1.3: Introduced Updates app. \n Version 1.4: Introduced new interface font.')">
@@ -109,13 +106,13 @@
     </div>
 
     <!-- The actual app, when opened. -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
+    <div id="frame" class="frame">
+        <div class="frame-content">
+            <div class="frame-header">
                 <span id="app-title"></span>
-                <span class="close" onclick="closeModal()">&times;</span>
+                <span class="close" onclick="closeframe()">&times;</span>
             </div>
-            <div class="modal-body" id="app-content">
+            <div class="frame-body" id="app-content">
                 <!-- App content will be injected here -->
             </div>
         </div>
