@@ -40,13 +40,13 @@
 
 @font-face {
     font-family: 'system ui';
-    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/cambrygg/cambryggui.ttf);
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/cambrygg/CambryggVariable.ttf);
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'system ui bold';
-    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/cambrygg/cambrygguib.ttf);
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/cambrygg/CambryggVariable-Bold.ttf);
     font-weight: 400;
 }
 
