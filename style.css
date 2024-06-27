@@ -40,13 +40,13 @@
 
 @font-face {
     font-family: 'system ui';
-    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/snowdon/snowdon-light.ttf);
+    src: url(https://delivercdn.pages.dev/auroratype/CambryggUI/CambryggUI.ttf);
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'system ui bold';
-    src: url(https://delivercdn.pages.dev/WebKernel/fonts/aurorasoft/snowdon/snowdon-bold.ttf);
+    src: url(https://delivercdn.pages.dev/auroratype/CambryggUI/CambryggUI-Bold.ttf);
     font-weight: 400;
 }
 
