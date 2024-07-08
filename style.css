@@ -40,13 +40,13 @@
 
 @font-face {
     font-family: 'system ui';
-    src: url(https://delivercdn.pages.dev/auroratype/JamaisVu/JamaisVuSansAT.ttf);
+    src: url(https://delivercdn.pages.dev/barclay/fonts/AmserUI/AmserUI.ttf);
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'system ui bold';
-    src: url(https://delivercdn.pages.dev/auroratype/JamaisVu/JamaisVuSansAT-Bold.ttf);
+    src: url(https://delivercdn.pages.dev/barclay/fonts/AmserUI/AmserUI-Bold.ttf);
     font-weight: 400;
 }
 
