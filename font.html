@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjust Paragraph Size</title>
+    <style>
+        @font-face {
+            font-family: 'Aurorasoft Sans Serif A';
+            src: url(./sys6/assansserif.ttf);
+        }
+        @font-face {
+            font-family: 'Aurorasoft Sans Serif B';
+            src: url(./sys6/aurorss.ttf);
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Aurorasoft Sans Serif B';
+            src: url(./sys6/aurorssb.ttf);
+            font-weight: 700;
+        }
+        .p1a {
+            font-family: 'Aurorasoft Sans Serif A';
+            font-weight: 400;
+        }
+        .p1b {
+            font-family: 'Aurorasoft Sans Serif A';
+            font-weight: 700;
+        }
+        .p1c {
+            font-family: 'Aurorasoft Sans Serif B';
+            font-weight: 400;
+        }
+        .p1d {
+            font-family: 'Aurorasoft Sans Serif B';
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <input type="range" id="fontSizeSlider" min="10" max="50" value="16">
+    <label for="fontSizeSlider">Adjust Paragraph Size</label>
+    
+    <p class="p1a">Lorem ipsum dolor sit amet.</p>
+    <p class="p1b">Lorem ipsum dolor sit amet.</p>
+    <p class="p1c">Lorem ipsum dolor sit amet.</p>
+    <p class="p1d">Lorem ipsum dolor sit amet.</p>
+    
+    <script>
+        const slider = document.getElementById('fontSizeSlider');
+        const paragraphs = document.querySelectorAll('p');
+        
+        slider.addEventListener('input', function() {
+            const newSize = slider.value + 'px';
+            paragraphs.forEach(p => {
+                p.style.fontSize = newSize;
+            });
+        });
+    </script>
+</body>
+</html>

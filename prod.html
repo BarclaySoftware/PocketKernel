@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="16x16">
+    <title>PocketKernel Beta</title>
+</head>
+<style>
+    :root {
+        --system-font-regular: 'system ui';
+        --system-font-bold: 'system ui bold';
+
+        --system-app-titlebar: #0078d4;
+        --system-app-titlebar-text-color: #ffffff;
+        --system-app-background: #ffffff;
+        --system-app-text-color: #05070B;
+        --system-app-border-color: rgba(0,0,0,0);
+
+        --system-background-color: #0078d4;
+
+        --system-selection-background-color: #0078d4;
+        --system-selection-text-color: #ffffff;
+
+        --system-appbar-background-color: #000308;
+        --system-appbar-opened: #0078d4;
+        --system-appbar-border: #000308;
+
+        --system-link-normal: #0078d4;
+        --system-link-hover: #0063b1;
+        --system-link-clicked: #0063b1;
+        --system-link-visited: #881798;
+
+        --system-scroll-background: #f1f1f1;
+        --system-scroll-track-background: #f1f1f1;
+        --system-scroll-thumb-background: #c1c1c1;
+        --system-scroll-thumb-hover-background: #a8a8a8;
+        --system-scroll-thumb-active-background: #787878;
+
+    }
+
+    @font-face {
+        font-family: 'system ui';
+        src: url(https://delivercdn.pages.dev/barclay/fonts/AmserUI/AmserUI.ttf);
+        font-weight: 400;
+    }
+
+    @font-face {
+        font-family: 'system ui bold';
+        src: url(https://delivercdn.pages.dev/barclay/fonts/AmserUI/AmserUI-Bold.ttf);
+        font-weight: 400;
+    }
+
+    body, html {
+        font-family: var(--system-font-regular);
+        background-color: var(--system-app-background);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .desktop {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: var(--system-background-color);
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        box-sizing: border-box;
+        justify-content: center;
+        gap: 0px;
+        align-content: flex-start;
+        align-items: center;
+    }
+
+    .app {
+        width: 70px;
+        height: 70px;
+        margin: 10px 10px;
+        background-color: var(--system-app-background);
+        border-radius: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .app img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .app p {
+        margin: 5px 0 0 0;
+        font-size: 12px;
+    }
+
+    a {
+        color: var(--system-link-normal)
+    }
+
+    a:hover {
+        color: var(--system-link-hover)
+    }
+
+    a:active {
+        color: var(--system-link-clicked)
+    }
+
+    a:visited {
+        color: var(--system-link-visited)
+    }
+
+    ::selection {
+        background-color: var(--system-selection-background-color);
+        color: var(--system-selection-text-color);
+    }
+
+    ::-moz-selection {
+        background-color: var(--system-selection-background-color);
+        color: var(--system-selection-text-color);
+    }
+
+    ::-webkit-scrollbar {
+        width: 18px;
+        height: 18px;
+        background: var(--system-scroll-background);
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--system-scroll-track-background);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--system-scroll-thumb-background);
+        border-radius: 0px;
+        border: 3px solid var(--system-scroll-background);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--system-scroll-thumb-hover-background);
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+        background-color: var(--system-scroll-thumb-active-background);
+    }
+
+    .frame {
+        font-family: var(--system-font-regular);
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .frame-content {
+        font-family: var(--system-font-regular);
+        background-color: var(--system-app-background);
+        padding: 0;
+        border-radius: 00px;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .frame-header {
+        font-family: var(--system-font-regular);
+        background-color: var(--system-app-titlebar);
+        color: var(--system-app-titlebar-text-color);
+        padding: 10px;
+        text-align: center;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .frame-header .close {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .frame-body {
+        font-family: var(--system-font-regular);
+        flex: 1;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .frame iframe {
+        font-family: var(--system-font-regular);
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .appIcon {
+        width: 40px;
+        height: 40px;
+    }
+</style>
+<body>
+    <div class="desktop">
+        <div class="app" onclick="openApp('Barclay Search', 'https://barclaygo.pages.dev/', true, 'erhered')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/search.png" alt="Search">
+            <p>Search</p>
+        </div>
+
+        <div class="app" onclick="openApp('Registry Editor', '', false, 'registryEditor')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/registry.png" alt="Registry">
+            <p>Registry Editor</p>
+        </div>
+
+        <div class="app" onclick="openApp('MiniBrowser', 'https://minibrowser.pages.dev/', true, 'erherd')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/browser.png" alt="Browser">
+            <p>Browser</p>
+        </div>
+
+        <div class="app" onclick="openApp('Analog Clock', 'https://caesiumapps.pages.dev/clock/', true, 'rerbdh')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/clock.png" alt="Clock">
+            <p>Clock</p>
+        </div>
+
+        <div class="app" onclick="openApp('MiniDoodler', 'https://minidoodler.pages.dev/', true, 'eryere')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/canvas.png" alt="Canvas">
+            <p>Canvas</p>
+        </div>
+
+        <div class="app" onclick="openApp('Notes', 'https://caesiumapps.pages.dev/notes/', true, 'erhyey')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/notes.png" alt="Notes">
+            <p>Notes</p>
+        </div>
+
+        <div class="app" onclick="openApp('Terminal', 'https://caesiumapps.pages.dev/terminal/', true, 'dheth')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/terminal.png" alt="Terminal">
+            <p>Terminal</p>
+        </div>
+
+        <div class="app" onclick="openApp('Math Solver', 'https://caesiumapps.pages.dev/calculator/', true, 'etewtetew')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/calculator.png" alt="Calculator">
+            <p>Solver</p>
+        </div>
+
+        <div class="app" onclick="openApp('Welcome', '\n Welcome to PocketKernel, the mobile version of WebKernel. All of your favorite WebKernel desktop apps are in PocketKernel. With one design language and similar functionality, easily switch between desktop and mobile.')">
+            <img src="https://delivercdn.pages.dev/WebKernel/images/appicons/welcome.png" alt="Welcome">
+            <p>Welcome</p>
+        </div>
+
+        <div class="app" onclick="openApp('System Info', 'https://caesiumapps.pages.dev/sys/', true, 'wergtrwte')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/system.png" alt="Media">
+            <p>SysInfo</p>
+        </div>
+
+        <div class="app" onclick="openApp('RSS Feeder', 'https://caesiumapps.pages.dev/rss/', true, 'regwereg')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/rss.png" alt="Media">
+            <p>RSS</p>
+        </div>
+
+        <div class="app" onclick="openApp('Updates', '\n Version 1.0: Initial release. \n Version 1.1: Changed UI to fit Aurorasoft design standards \n Version 1.2: Changed UI to use new display font to make the feel more welcoming. \n Version 1.3: Introduced Updates app. \n Version 1.4: Introduced new interface font.')">
+            <img src="https://delivercdn.pages.dev/WebKernel/images/appicons/updates.png" alt="Updates">
+            <p>Updates</p>
+        </div>
+
+        <div class="app" onclick="openApp('Base64 Converter', 'https://caesiumapps.pages.dev/base64/', true, 'wegfwerg')">
+            <img src="https://delivercdn.pages.dev/WebKernel/images/appicons/base64.png" alt="Base64">
+            <p>Base64</p>
+        </div>
+
+        <div class="app" onclick="openApp('Signature Pro', 'https://caesiumapps.pages.dev/signature/', true, 'fdef')">
+            <img src="https://delivercdn.pages.dev/WebKernel/images/appicons/signature.png" alt="Signature">
+            <p>Signature</p>
+        </div>
+
+        <div class="app" onclick="openApp('QuickSend', 'https://caesiumapps.pages.dev/quicksend/', true, 'af')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/quicksend.png" alt="QuickSend">
+            <p>QuickSend</p>
+        </div>
+
+        <div class="app" onclick="openApp('Media Viewer', 'https://caesiumapps.pages.dev/media/', true, 'dd')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/WebKernel/images/appicons/media.png" alt="Media">
+            <p>Media</p>
+        </div>
+    </div>
+
+    <div id="frame" class="frame">
+        <div class="frame-content">
+            <div class="frame-header">
+                <span id="app-title"></span>
+                <span class="close" onclick="closeframe()">&times;</span>
+            </div>
+            <div class="frame-body" id="app-content">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            applyRegistrySettings();
+        });
+
+        function openApp(appName, content, isIframe = false, appId = '') {
+            document.getElementById('app-title').innerText = appName;
+            const appContent = document.getElementById('app-content');
+            appContent.innerHTML = '';
+
+            if (isIframe) {
+                const iframe = document.createElement('iframe');
+                iframe.src = content;
+                appContent.appendChild(iframe);
+            } else if (appId === 'registryEditor') {
+                openRegistryEditor(appContent);
+            } else {
+                appContent.innerText = content;
+            }
+
+            document.getElementById('frame').style.display = 'flex';
+        }
+
+        function closeframe() {
+            document.getElementById('frame').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const frame = document.getElementById('frame');
+            if (event.target == frame) {
+                frame.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('contextmenu', function (event) {
+            event.preventDefault();
+        });
+
+        function openRegistryEditor(appContent) {
+            const container = document.createElement('div');
+            container.style.padding = '20px';
+            container.style.display = 'flex';
+            container.style.flexDirection = 'column';
+            container.style.alignItems = 'flex-start';
+            container.style.fontFamily = 'var(--system-font-regular)';
+
+            const registryList = document.createElement('div');
+            registryList.id = 'registry-list';
+            registryList.style.flexGrow = '1';
+            registryList.style.width = '100%';
+            registryList.style.border = '1px solid var(--system-app-border-color)';
+            registryList.style.background = '#f9f9f9';
+            registryList.style.padding = '10px';
+            registryList.style.overflowY = 'auto';
+
+            const form = document.createElement('form');
+            form.style.display = 'flex';
+            form.style.marginTop = '10px';
+
+            const keyInput = document.createElement('input');
+            keyInput.type = 'text';
+            keyInput.placeholder = 'Key';
+            keyInput.style.flexGrow = '1';
+            keyInput.style.marginRight = '10px';
+            keyInput.style.padding = '5px';
+
+            const valueInput = document.createElement('input');
+            valueInput.type = 'text';
+            valueInput.placeholder = 'Value';
+            valueInput.style.flexGrow = '1';
+            valueInput.style.marginRight = '10px';
+            valueInput.style.padding = '5px';
+
+            const addButton = document.createElement('button');
+            addButton.type = 'submit';
+            addButton.innerText = 'Add/Update';
+            addButton.style.padding = '5px 10px';
+            addButton.style.cursor = 'pointer';
+
+            form.appendChild(keyInput);
+            form.appendChild(valueInput);
+            form.appendChild(addButton);
+            container.appendChild(registryList);
+            container.appendChild(form);
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const key = keyInput.value.trim();
+                const value = valueInput.value.trim();
+                if (key) {
+                    localStorage.setItem(key, value);
+                    displayRegistryItems();
+                    applyRegistrySettings(); // Apply changes immediately
+                    keyInput.value = '';
+                    valueInput.value = '';
+                }
+            });
+
+            function displayRegistryItems() {
+                registryList.innerHTML = '';
+                Object.keys(localStorage).forEach(function (key) {
+                    const item = document.createElement('div');
+                    item.style.display = 'flex';
+                    item.style.justifyContent = 'space-between';
+                    item.style.padding = '5px 0';
+
+                    const keyDiv = document.createElement('div');
+                    keyDiv.innerText = key;
+
+                    const valueDiv = document.createElement('div');
+                    valueDiv.innerText = localStorage.getItem(key);
+
+                    const deleteButton = document.createElement('button');
+                    deleteButton.innerText = 'Delete';
+                    deleteButton.style.marginLeft = '10px';
+                    deleteButton.style.cursor = 'pointer';
+
+                    deleteButton.addEventListener('click', function () {
+                        localStorage.removeItem(key);
+                        displayRegistryItems();
+                        applyRegistrySettings(); // Reapply settings after deletion
+                    });
+
+                    item.appendChild(keyDiv);
+                    item.appendChild(valueDiv);
+                    item.appendChild(deleteButton);
+                    registryList.appendChild(item);
+                });
+            }
+
+            displayRegistryItems();
+            appContent.appendChild(container);
+        }
+
+        function applyRegistrySettings() {
+            // Apply font changes
+            const fontRegular = localStorage.getItem('font-regular');
+            if (fontRegular) {
+                document.documentElement.style.setProperty('--system-font-regular', fontRegular);
+            }
+
+            const fontBold = localStorage.getItem('font-bold');
+            if (fontBold) {
+                document.documentElement.style.setProperty('--system-font-bold', fontBold);
+            }
+
+            // Apply color changes
+            const backgroundColor = localStorage.getItem('background-color');
+            if (backgroundColor) {
+                document.documentElement.style.setProperty('--system-background-color', backgroundColor);
+            }
+
+            const titleBarColor = localStorage.getItem('titlebar-color');
+            if (titleBarColor) {
+                document.documentElement.style.setProperty('--system-app-titlebar', titleBarColor);
+            }
+
+            const textColor = localStorage.getItem('text-color');
+            if (textColor) {
+                document.documentElement.style.setProperty('--system-app-text-color', textColor);
+            }
+
+            // Add new apps dynamically
+            const newApps = localStorage.getItem('new-apps');
+            if (newApps) {
+                const apps = JSON.parse(newApps);
+                const desktop = document.getElementById('desktop');
+                apps.forEach(app => {
+                    if (!document.getElementById(app.id)) { // Ensure app is not duplicated
+                        const appElement = document.createElement('div');
+                        appElement.classList.add('app');
+                        appElement.id = app.id;
+                        appElement.onclick = function() {
+                            openApp(app.name, app.url, app.isIframe, app.id);
+                        };
+
+                        const appIcon = document.createElement('img');
+                        appIcon.classList.add('appIcon');
+                        appIcon.src = app.icon;
+                        appIcon.alt = app.name;
+
+                        const appLabel = document.createElement('p');
+                        appLabel.innerText = app.name;
+
+                        appElement.appendChild(appIcon);
+                        appElement.appendChild(appLabel);
+                        desktop.appendChild(appElement);
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

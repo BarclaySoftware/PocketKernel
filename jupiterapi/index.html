@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Cobalt API UI Example</title>
+    <!-- Cobalt API and Cobalt API UI CDN -->
+    <script src="./cobalt.js"></script>
+    <script src="./cobalt-ui.js"></script>
+    <link rel="stylesheet" href="./cobalt-ui.css">
+    <style>
+        /* Custom CSS */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #custom-dialog {
+            display: none;
+        }
+
+        .custom-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1267B4;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        .custom-button:hover {
+            background-color: #1B4C82;
+        }
+
+        #slider-container {
+            margin-top: 20px;
+        }
+
+        .custom-slider {
+            width: 300px;
+        }
+
+        #amount {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Custom Cobalt API UI Example</h1>
+    
+    <!-- Custom Button that triggers dialog -->
+    <div class="custom-button" id="open-dialog">Open Dialog</div>
+    
+    <!-- Custom Dialog -->
+    <div id="custom-dialog" title="My Custom Dialog">
+        <p>This is a custom Cobalt API dialog!</p>
+        <div id="slider-container">
+            <p>
+                <label for="amount">Selected value:</label>
+                <span id="amount">50</span>
+            </p>
+            <div id="slider" class="custom-slider"></div>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            // Initialize the dialog
+            $("#custom-dialog").dialog({
+                autoOpen: false,
+                modal: true,
+                buttons: {
+                    "Close": function() {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+
+            // Open the dialog when button is clicked
+            $("#open-dialog").on("click", function() {
+                $("#custom-dialog").dialog("open");
+            });
+
+            // Initialize the slider
+            $("#slider").slider({
+                value: 50,
+                min: 0,
+                max: 100,
+                slide: function(event, ui) {
+                    $("#amount").text(ui.value);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

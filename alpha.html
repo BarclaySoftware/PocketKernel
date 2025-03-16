@@ -1,0 +1,84 @@
+<!-- Copyright (c) 2024 Aurorasoft. PocketKernel is a trademark of Aurorasoft. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Change the URL to the location of your web desktop's icon. -->
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="76x76">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="120x120">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="228x228">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="256x256">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="300x300">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="384x384">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/WebKernel/images/appicons/WebKernel-Icon.png" sizes="600x600">
+
+    <!-- Where your web desktop's design language is located. -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- The name of your web desktop in the browser. -->
+    <title>PocketKernel Beta</title>
+</head>
+<body>
+    <!-- Where all of your web desktop's apps are. -->
+    <div class="desktop" id="desktop"></div>
+
+    <!-- The actual app, when opened. -->
+    <div id="frame" class="frame">
+        <div class="frame-content">
+            <div class="frame-header">
+                <span id="app-title"></span>
+                <span class="close" onclick="closeframe()">&times;</span>
+            </div>
+            <div class="frame-body" id="app-content">
+                <!-- App content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="./applications.api.js"></script>
+    <script>
+        // addApp('', '', '', true);
+
+        addApp('Wikipedia', 'https://www.wikipedia.org/static/apple-touch/wikipedia.png', 'https://www.wikipedia.org/', true);
+        addApp('Barclay Go', 'https://barclaygo.pages.dev/assets/images/start_favicon.png', 'https://barclaygo.pages.dev/', true);
+        addApp('Calculator', '', 'https://rubisco.pages.dev/solve', true);
+        addApp('Clock', 'https://delivercdn.pages.dev/WebKernel/images/appicons/clock.png', 'https://caesiumapps.pages.dev/clock/', true);
+        // addApp('Weather', '', '', true);
+        // addApp('YouTube', '', '', true);
+        // addApp('Calendar', '', '', true);
+        addApp('Email Sender', '', 'https://rubisco.pages.dev/email', true);
+        addApp('Andorra Notes', 'https://webscript.pages.dev/assets/favicon.png', 'https://andorraeditor.pages.dev/', true);
+        // addApp('Games', '', '', true);
+        addApp('Media Player', 'https://delivercdn.pages.dev/WebKernel/images/appicons/media.png', 'https://caesiumapps.pages.dev/media/', true);
+        addApp('Caesium', 'https://caesiumwebview.pages.dev/appicon.png', 'https://caesiumwebview.pages.dev/', true);
+        addApp('Phone', 'https://delivercdn.pages.dev/WebKernel/images/appicons/quicksend.png', 'https://caesiumapps.pages.dev/quicksend/', true);
+        addApp('GroupWave', 'https://groupwave.pages.dev/assets/images/icon.png', 'https://groupwave.pages.dev/', true);
+        // addApp('Camera', '', '', true);
+        // addApp('Translator', '', '', true);
+        addApp('Maps', 'https://barclaygo.pages.dev/assets/images/maps_favicon.png', 'https://barclaygo.pages.dev/maps/', true);
+        addApp('RSS Reader', 'https://delivercdn.pages.dev/WebKernel/images/appicons/rss.png', 'https://caesiumapps.pages.dev/rss/', true);
+        // addApp('News', '', '', true);
+        // addApp('Start', '', '', true);
+        addApp('SysInfo', 'https://delivercdn.pages.dev/WebKernel/images/appicons/system.png', 'https://rubisco.pages.dev/sysinfo/', true);
+        addApp('Assistant', 'https://janusml.pages.dev/assets/favicon.png', 'https://janus.pages.dev/', true);
+        // addApp('IP/Address Lookup', '', '', true);
+        // addApp('WebStore', '', '', true);
+        // addApp('Documents', '', '', true);
+        addApp('Voicer', '', 'https://barclaywebtech.pages.dev/speaker', true);
+        addApp('PDF Viewer', '', 'https://rubisco.pages.dev/pdfviewer/web/viewer', true);
+        // addApp('Dictionary', '', '', true);
+    </script>
+</body>
+</html>

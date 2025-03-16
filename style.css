@@ -1,8 +1,7 @@
 /* Copyright (c) 2024 Aurorasoft. PocketKernel is a trademark of Aurorasoft. */
 :root {
     /* The fonts in your web desktop's user interface. */
-    --system-font-regular: 'system ui';
-    --system-font-bold: 'system ui bold';
+    --system-font: 'Kernel UI', 'Bleuant', 'AS Sans Serif', sans-serif;
 
     /* Colors used in apps. */
     --system-app-titlebar: #0078d4;
@@ -15,7 +14,7 @@
     --system-background-color: #0078d4;
 
     /* Selection colors. */
-    --system-selection-background-color: #0078d4;
+    --system-selection-background-color: #000000;
     --system-selection-text-color: #ffffff;
 
     /* Appbar colors. */
@@ -39,19 +38,55 @@
 }
 
 @font-face {
-    font-family: 'system ui';
-    src: url(https://delivercdn.pages.dev/barclay/fonts/AmserUI/AmserUI.ttf);
+    font-family: "Bleuant";
+    src: url(./sys6/Bleuant-Regular.ttf);
     font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Bleuant";
+    src: url(./sys6/Bleuant-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: 'system ui bold';
-    src: url(https://delivercdn.pages.dev/barclay/fonts/AmserUI/AmserUI-Bold.ttf);
+    font-family: "Kernel UI";
+    src: url(./sys6/KernelUI.ttf);
     font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Kernel UI";
+    src: url(./sys6/KernelUI-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Kernel UI";
+    src: url(./sys6/KernelUI-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Kernel UI";
+    src: url(./sys6/KernelUI-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'fallback';
+    src: url(./sys6/assansserif.ttf);
+}
+
+@font-face {
+    font-family: 'AS Sans Serif';
+    src: url(./sys6/assansserif.ttf);
 }
 
 body, html {
-    font-family: var(--system-font-regular);
+    font-family: var(--system-font);
     background-color: var(--system-app-background);
     flex-direction: column;
     justify-content: center;
@@ -154,7 +189,7 @@ a:visited {
 }
 
 .frame {
-    font-family: var(--system-font-regular);
+    font-family: var(--system-font);
     display: none;
     position: fixed;
     z-index: 1;
@@ -169,7 +204,7 @@ a:visited {
 }
 
 .frame-content {
-    font-family: var(--system-font-regular);
+    font-family: var(--system-font);
     background-color: var(--system-app-background);
     padding: 0;
     border-radius: 00px;
@@ -183,7 +218,8 @@ a:visited {
 }
 
 .frame-header {
-    font-family: var(--system-font-regular);
+    font-family: var(--system-font);
+    font-weight: bold;
     background-color: var(--system-app-titlebar);
     color: var(--system-app-titlebar-text-color);
     padding: 10px;
@@ -205,14 +241,14 @@ a:visited {
 }
 
 .frame-body {
-    font-family: var(--system-font-regular);
+    font-family: var(--system-font);
     flex: 1;
     padding: 0;
     overflow: hidden;
 }
 
 .frame iframe {
-    font-family: var(--system-font-regular);
+    font-family: var(--system-font);
     width: 100%;
     height: 100%;
     border: none;
